@@ -15,5 +15,5 @@
 
 var main = function (event) {
  
-    return "Hi!";
+    return {1:'Hi!'};
 };
