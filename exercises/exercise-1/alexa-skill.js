@@ -15,5 +15,10 @@
 
 var main = function (event) {
  
-    return {1:'Hi!'};
+    return {
+     tag:"a",
+     link:"http://adobe.com"
+     iconClass:"batch",
+     label:"Custom Action Here"
+    };
 };
