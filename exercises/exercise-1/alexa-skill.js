@@ -17,7 +17,7 @@ var main = function (event) {
  
     return {
      tag:"a",
-     link:"http://adobe.com"
+     link:"http://adobe.com",
      iconClass:"batch",
      label:"Custom Action Here"
     };
