@@ -14,7 +14,9 @@
 
 
 var main = function (event) {
- 
+ */
+ * test
+ */
     return {
      tag:"a",
      link:"http://adobe.com",
