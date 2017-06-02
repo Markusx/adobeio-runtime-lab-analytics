@@ -14,7 +14,7 @@
 
 
 var main = function (event) {
- */
+ /*
  * test
  */
     return {
