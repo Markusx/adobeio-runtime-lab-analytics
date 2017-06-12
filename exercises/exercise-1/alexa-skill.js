@@ -21,7 +21,7 @@ var main = function (event) {
     "type":"dialog",
     "properties":{
         "headerText":"Custom Header Text",
-        "bodyText":"BodyText",
+        "bodyText":"Some general body text for the dialog",
         "buttonOkayText":"OKIE"
     },
     
