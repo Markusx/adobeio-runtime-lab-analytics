@@ -17,10 +17,33 @@ var main = function (event) {
  /*
  * test
  */
-    return {
-     tag:"a",
-     link:"http://adobe.com",
-     iconClass:"batch",
-     label:"Custom Action Here"
-    };
+  return {
+    "type":"dialog",
+    "properties":{
+        "headerText":"Custom Header Text",
+        "bodyText":"BodyText",
+        "buttonOkayText":"OKIE"
+    },
+    
+    "children": [   
+        {
+            "type":"textarea",
+            "properties":{
+                "label":"My Text Area Label",
+                "text":"My Custom Text",
+                "placeholder":"placeholder text here, like 'Mark is awesome!' "
+            }
+        },
+        
+        {
+            "type":"button",
+            "properties":{
+                "label":"My Cool Button",
+                "buttonText":"My Button Text"
+            }
+        }
+    
+    ]
+    
+}
 };
