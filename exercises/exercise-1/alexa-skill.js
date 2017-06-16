@@ -54,16 +54,19 @@ function loadDialog() {
 
 function validate() {
     
-    
+    return {
+        "succes":true,
+        "vald":true
+    }
 }
 
 
 function submit() {
     
-    
+      return {
+        "success":true
+    }
 }
-
-
 
 
 var main = function (params) {
@@ -77,7 +80,7 @@ var main = function (params) {
     switch ( action ) {
             
         case ACTION_LOAD:
-            return loadDialog();
+            return loadDialog(params);
         break;
             
         case ACTION_VALIDATE:
