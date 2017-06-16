@@ -12,38 +12,85 @@
  * limitations under the License.
  */
 
+const ACTION_LOAD:"load";
+const ACTION_VALIDATE:"validate";
+const ACTION_SUBMIT:"submit";
 
-var main = function (event) {
- /*
- * test
- */
-  return {
-    "type":"dialog",
-    "properties":{
-        "headerText":"Custom Header Text",
-        "bodyText":"Some general body text for the dialog",
-        "buttonOkayText":"OKIE"
-    },
+
+
+function loadDialog() {
     
-    "children": [   
-        {
-            "type":"textarea",
-            "properties":{
-                "label":"My Text Area Label",
-                "text":"My Custom Text",
-                "placeholder":"placeholder text here, like 'Mark is awesome!' "
-            }
+    return {
+        "type":"dialog",
+        "properties":{
+            "headerText":"Custom Header Text",
+            "bodyText":"Some general body text for the dialog",
+            "buttonOkayText":"OKIE"
         },
-        
-        {
-            "type":"button",
-            "properties":{
-                "label":"My Cool Button",
-                "buttonText":"My Button Text"
+
+        "children": [   
+            {
+                "type":"textarea",
+                "properties":{
+                    "label":"My Text Area Label",
+                    "text":"My Custom Text",
+                    "placeholder":"placeholder text here, like 'Mark is awesome!' "
+                }
+            },
+
+            {
+                "type":"button",
+                "properties":{
+                    "label":"My Cool Button",
+                    "buttonText":"My Button Text"
+                }
             }
-        }
+
+        ]
     
-    ]
+    }
+}
+
+
+function validate() {
+    
     
 }
+
+
+function submit() {
+    
+    
+}
+
+
+
+
+var main = function (params) {
+
+    var action = params.action;
+    
+    if ( !action || action =='' ) {
+        return {"error":"Missing action parameter"};
+    }
+    
+    switch ( action ) {
+            
+        case ACTION_LOAD:
+            return loadDialog();
+        break;
+            
+        case ACTION_VALIDATE:
+            return validate(parms);
+        break;
+            
+        case ACTION_SUBMIT:
+            return submit(params);
+        break;
+  
+            
+        default:
+            return {"error":"No matching action found"};
+        break;
+    }
 };
