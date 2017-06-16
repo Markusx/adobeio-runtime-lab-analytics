@@ -25,7 +25,7 @@ function loadDialog() {
         "properties":{
             "headerText":"Custom Header Text",
             "bodyText":"Some general body text for the dialog",
-            "buttonOkayText":"OKIE"
+            "buttonOkayText":"SUBMIT"
         },
 
         "children": [   
