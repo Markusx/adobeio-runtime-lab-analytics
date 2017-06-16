@@ -23,8 +23,8 @@ function loadDialog() {
     return {
         "type":"dialog",
         "properties":{
-            "headerText":"Custom Header Text",
-            "bodyText":"Some general body text for the dialog",
+            "headerText":"Post to Microsoft Teams",
+            "bodyText":"",
             "buttonOkayText":"SUBMIT"
         },
 
@@ -32,20 +32,11 @@ function loadDialog() {
             {
                 "type":"textarea",
                 "properties":{
-                    "label":"My Text Area Label",
-                    "text":"My Custom Text",
-                    "placeholder":"placeholder text here, like 'Mark is awesome!' "
-                }
-            },
-
-            {
-                "type":"button",
-                "properties":{
-                    "label":"My Cool Button",
-                    "buttonText":"My Button Text"
+                    "label":"Message",
+                    "text":"Message",
+                    "placeholder":"check out this cool design in Creative Cloud"
                 }
             }
-
         ]
     
     }
