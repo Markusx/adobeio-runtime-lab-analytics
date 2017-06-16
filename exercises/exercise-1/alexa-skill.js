@@ -12,9 +12,9 @@
  * limitations under the License.
  */
 
-const ACTION_LOAD:"load";
-const ACTION_VALIDATE:"validate";
-const ACTION_SUBMIT:"submit";
+var ACTION_LOAD = "load";
+var ACTION_VALIDATE = "validate";
+var ACTION_SUBMIT =  "submit";
 
 
 
