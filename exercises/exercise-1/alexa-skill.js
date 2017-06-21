@@ -32,6 +32,7 @@ function loadDialog() {
             {
                 "type":"textarea",
                 "properties":{
+                    "propertyName":"message",
                     "label":"Message",
                     "text":"Message",
                     "placeholder":"check out this cool design in Creative Cloud"
