@@ -40,7 +40,7 @@ function keyEncrypt(params) {
     var token = params.token;
     var secret = params.secret;
     
-    return { "encrypted"": encrypt(token, secret) };
+    return { "encrypted": encrypt(token, secret) };
 }
 
 var secrettoken = ""
