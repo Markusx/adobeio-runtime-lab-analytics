@@ -112,7 +112,7 @@ function getColors(assetUrn, token) {
 		"uri": "https://cc-api-storage.adobe.io/id/" + assetUrn + "/:metadata", 
 		"headers": {"x-api-key": api_key, "Authorization":token}, 
 		"json": true}).then(function(body) {
-			return {"colors": body};
+			return body;
 		});
 }
 
