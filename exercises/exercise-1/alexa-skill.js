@@ -16,7 +16,6 @@
 START OF AUTH FUNCTIONS
 */
 
-var request = require('request-promise');
 var crypto = require('crypto');
 var api_key = "74c110893e934f30a95adb79046260c9"
 
