@@ -100,6 +100,7 @@ function submit(params) {
     var secret = params.secret;
     var decToken = decrypt(secretToken, secret);
     var assetId = "e57476f3-5d0c-48b3-8609-bf9b56a2317a";
+    return {asset:assetId,token:decToken};
     return getColors(assetId,decToken);
     
 }
