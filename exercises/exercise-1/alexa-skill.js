@@ -12,10 +12,54 @@
  * limitations under the License.
  */
 
+/* 
+START OF AUTH FUNCTIONS
+*/
+
+var request = require('request-promise');
+var crypto = require('crypto');
+var api_key = "74c110893e934f30a95adb79046260c9"
+
+var algorithm = 'aes-256-ctr';
+
+function encrypt(text, password){
+  var cipher = crypto.createCipher(algorithm,password)
+  var crypted = cipher.update(text,'utf8','hex')
+  crypted += cipher.final('hex');
+  return crypted;
+}
+ 
+function decrypt(text, password){
+  var decipher = crypto.createDecipher(algorithm,password)
+  var dec = decipher.update(text,'hex','utf8')
+  dec += decipher.final('utf8');
+  return dec;
+}
+
+function keyEncrypt(params) {
+    var token = params.token;
+    var secret = params.secret;
+    
+    return { "encrypted"": encrypt(token, secret) };
+}
+
+var secrettoken = ""
+
+
+/*
+END OF AUTH FUNCTIONS
+*/
+
+
+
+
+
 var ACTION_LOAD = "load";
 var ACTION_VALIDATE = "validate";
 var ACTION_SUBMIT =  "submit";
+var ACTION_ENCRYPT = "encrypt";
 
+var bearerToken = ""
 
 
 function loadDialog() {
@@ -32,7 +76,6 @@ function loadDialog() {
             {
                 "type":"textarea",
                 "properties":{
-                    "propertyName":"message",
                     "label":"Message",
                     "text":"Message",
                     "placeholder":"check out this cool design in Creative Cloud"
@@ -83,6 +126,9 @@ var main = function (params) {
             return submit(params);
         break;
   
+        case ACTION_ENCRYPT:
+            return keyEncrypt(params);
+        break;
             
         default:
             return {"error":"No matching action found"};
