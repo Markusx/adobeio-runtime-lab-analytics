@@ -100,7 +100,6 @@ function submit(params) {
     var secret = params.secret;
     var decToken = decrypt(secretToken, secret);
     var assetId = "urn:aaid:sc:US:0c77966f-9ddd-47ee-8ebc-1f63befdcbf5";
-    return {asset:assetId,token:decToken};
     return getColors(assetId,decToken);
     
 }
