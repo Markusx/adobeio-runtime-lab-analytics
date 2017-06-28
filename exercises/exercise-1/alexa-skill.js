@@ -98,7 +98,7 @@ function validate() {
 
 function submit(params) {
     
-    var secret = params.secret;
+    var secret = params.api_secret;
     var decToken = decrypt(secretToken, secret);
     var assetId = "urn:aaid:sc:US:0c77966f-9ddd-47ee-8ebc-1f63befdcbf5";
     return getColors(assetId,decToken);
@@ -122,11 +122,14 @@ var main = function (params) {
     var action = params.action;
     var secret = params.api_secret;
 
-	return {"secret":secret};
-	
     if ( !action || action =='' ) {
         return {"error":"Missing action parameter"};
     }
+	
+    if ( !secret || secret =='' ) {
+        return {"error":"Missing api_secret parameter"};
+    }
+		
     
     switch ( action ) {
             
@@ -135,7 +138,7 @@ var main = function (params) {
         break;
             
         case ACTION_VALIDATE:
-            return validate(parms);
+            return validate(params);
         break;
             
         case ACTION_SUBMIT:
