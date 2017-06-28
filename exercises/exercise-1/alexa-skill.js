@@ -120,7 +120,10 @@ function getColors(assetUrn, token) {
 var main = function (params) {
 
     var action = params.action;
-    
+    var secret = params.api_secret;
+
+	return {"secret":secret};
+	
     if ( !action || action =='' ) {
         return {"error":"Missing action parameter"};
     }
