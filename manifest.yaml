@@ -10,5 +10,5 @@ package:
       inputs:
         api_secret:
           type: String
-          description: Adobe Analytics API Key.
+          description: Adobe API Key.
         
