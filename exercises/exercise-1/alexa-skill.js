@@ -38,7 +38,7 @@ function decrypt(text, password){
 
 function keyEncrypt(params) {
     var token = params.token;
-    var secret = params.secret;
+    var secret = params.api_secret;
     
     return { "encrypted": encrypt(token, secret) };
 }
