@@ -8,9 +8,7 @@ package:
       location: exercises/exercise-1/alexa-skill.js
       runtime: nodejs@6
       inputs:
-        analytics_api_key:
+        api_secret:
           type: String
           description: Adobe Analytics API Key.
-        analytics_company:
-          type: String
-          description: Adobe Analytics Company Name.
+        
