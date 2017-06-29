@@ -93,8 +93,7 @@ function submit(params) {
     
     var secret = params.api_secret;
     var decToken = decrypt(secretToken, secret);
-   // var assetName = params.
-	var assetName = params.additionalData;
+	var assetName = params.additionalData.name;
     return getMetadata(assetName,decToken);
     
 }
