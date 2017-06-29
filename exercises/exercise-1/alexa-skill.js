@@ -49,16 +49,10 @@ END OF AUTH FUNCTIONS
 */
 
 
-
-
-
 var ACTION_LOAD = "load";
 var ACTION_VALIDATE = "validate";
 var ACTION_SUBMIT =  "submit";
 var ACTION_ENCRYPT = "encrypt";
-
-var bearerToken = ""
-
 
 function loadDialog() {
     
@@ -121,6 +115,8 @@ var main = function (params) {
 
     var action = params.action;
     var secret = params.api_secret;
+    
+    
 
     if ( !action || action =='' ) {
         return {"error":"Missing action parameter"};
@@ -129,6 +125,8 @@ var main = function (params) {
     if ( !secret || secret =='' ) {
         return {"error":"Missing api_secret parameter"};
     }
+    
+    console.log("Executing Action ", action );
 		
     
     switch ( action ) {
