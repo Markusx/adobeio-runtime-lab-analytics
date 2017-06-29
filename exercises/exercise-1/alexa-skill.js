@@ -76,7 +76,8 @@ function loadDialog() {
                 "properties":{
                     "label":"Message",
                     "text":"Message",
-                    "placeholder":"check out this cool design in Creative Cloud"
+                    "placeholder":"check out this cool design in Creative Cloud",
+                    "propertyName":"message"
                 }
             }
         ]
@@ -88,8 +89,8 @@ function loadDialog() {
 function validate() {
     
     return {
-        "succes":true,
-        "vald":true
+        "success":true,
+        "valid":true
     }
 }
 
@@ -98,17 +99,17 @@ function submit(params) {
     
     var secret = params.api_secret;
     var decToken = decrypt(secretToken, secret);
-   // var assetId = "urn:aaid:sc:US:0c77966f-9ddd-47ee-8ebc-1f63befdcbf5";
-	var assetId = "auditorium_group1_jpg.jpeg";
-    return getColors(assetId,decToken);
+   // var assetName = params.
+	var assetName = "auditorium_group1_jpg.jpeg";
+    return getMetadata(assetName,decToken);
     
 }
 
-function getColors(assetUrn, token) { 
+function getMetadata(assetName, token) { 
     
 	return request({
 		"method":"GET", 
-		"uri": "https://cc-api-storage.adobe.io/files/" + assetUrn + "/:metadata", 
+		"uri": "https://cc-api-storage.adobe.io/files/" + assetName + "/:metadata", 
 		"headers": {"x-api-key": api_key, "Authorization":"Bearer "+token, "metadata":":metadata", "Accept": "application/vnd.adobe.file+json" }
         }).then(function(body) {
 			return {body:body};
